@@ -6,7 +6,7 @@ const PurchaseComplete = () => {
   return (
     <>
       <h1>Thank you!</h1>
-      <p>You purchased {selectedProduct.name}</p>
+      <p>You purchased <strong>{selectedProduct.name}</strong></p>
     </>
   );
 };

@@ -53,8 +53,3 @@ button:disabled {
   color: white;
   transform: scale(1.1);
 }
-
-.product .price {
-  font-weight: bold;
-  margin-left: 1em;
-}

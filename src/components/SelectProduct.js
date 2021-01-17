@@ -46,8 +46,7 @@ const SelectProduct = () => {
               }`}
               onClick={() => handleProductClick(product)}
             >
-              {product.name}
-              <span className="price">{product.price}$</span>
+              {product.name} <strong>{product.price}$</strong>
             </li>
           ))}
         </ul>

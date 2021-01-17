@@ -3,6 +3,7 @@ import { createStore } from "redux";
 const initialState = {
   products: undefined,
   selectedProduct: undefined,
+  purchasedProduct: undefined,
 };
 
 const store = createStore((state = initialState, action) => {
@@ -17,6 +18,12 @@ const store = createStore((state = initialState, action) => {
       return {
         ...state,
         selectedProduct: action.payload,
+      };
+
+    case "product-purchased":
+      return {
+        ...state,
+        purchasedProduct: action.payload,
       };
 
     default:

@@ -8,7 +8,8 @@ const ConfirmPurchase = () => {
 
   const handleConfirm = () => {
     dispatch({
-      type: "purchase-confirmed",
+      type: "product-purchased",
+      payload: selectedProduct,
     });
 
     history.push("/purchase-complete");
@@ -21,7 +22,7 @@ const ConfirmPurchase = () => {
   return (
     <>
       <h1>Confirm Purchase</h1>
-      <p>Selected Product: {selectedProduct.name}</p>
+      <p>Selected Product: <strong>{selectedProduct.name}</strong></p>
       <div className="button-container">
         <button onClick={handleBack}>Back</button>
         <button onClick={handleConfirm}>Confirm</button>
