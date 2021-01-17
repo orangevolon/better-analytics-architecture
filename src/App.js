@@ -9,16 +9,18 @@ import PurchaseComplete from "./components/PurchaseComplete";
 import "./App.css";
 
 const App = () => (
-  <ReduxProvider store={store}>
-    <Router>
-      <Switch>
-        <Route path="/" exact component={Overview} />
-        <Route path="/select-product" component={SelectProduct} />
-        <Route path="/confirm-purchase" component={ConfirmPurchase} />
-        <Route path="/purchase-complete" component={PurchaseComplete} />
-      </Switch>
-    </Router>
-  </ReduxProvider>
+  <div className="app">
+    <ReduxProvider store={store}>
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Overview} />
+          <Route path="/select-product" component={SelectProduct} />
+          <Route path="/confirm-purchase" component={ConfirmPurchase} />
+          <Route path="/purchase-complete" component={PurchaseComplete} />
+        </Switch>
+      </Router>
+    </ReduxProvider>
+  </div>
 );
 
 export default App;

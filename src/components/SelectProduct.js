@@ -52,10 +52,12 @@ const SelectProduct = () => {
           ))}
         </ul>
       )}
-      <button onClick={handleBack}>Back</button>
-      <button onClick={handleBuyNow} disabled={!selectedProduct}>
-        Buy Now
-      </button>
+      <div className="button-container">
+        <button onClick={handleBack}>Back</button>
+        <button onClick={handleBuyNow} disabled={!selectedProduct}>
+          Buy Now
+        </button>
+      </div>
     </>
   );
 };

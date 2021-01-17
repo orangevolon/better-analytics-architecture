@@ -22,8 +22,10 @@ const ConfirmPurchase = () => {
     <>
       <h1>Confirm Purchase</h1>
       <p>Selected Product: {selectedProduct.name}</p>
-      <button onClick={handleBack}>Back</button>
-      <button onClick={handleConfirm}>Confirm</button>
+      <div className="button-container">
+        <button onClick={handleBack}>Back</button>
+        <button onClick={handleConfirm}>Confirm</button>
+      </div>
     </>
   );
 };

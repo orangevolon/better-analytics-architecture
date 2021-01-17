@@ -11,7 +11,9 @@ const Overview = () => {
     <>
       <h1>Overview</h1>
       <p>Checkout our awesome products!</p>
-      <button onClick={handleShowMeNow}>Show me now</button>
+      <div className="button-container">
+        <button onClick={handleShowMeNow}>Show me now</button>
+      </div>
     </>
   );
 };
