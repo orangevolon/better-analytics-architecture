@@ -1,4 +1,5 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import { subject } from "./analytics";
 
 const initialState = {
   products: undefined,
@@ -6,7 +7,7 @@ const initialState = {
   purchasedProduct: undefined,
 };
 
-const store = createStore((state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "products-loaded":
       return {
@@ -29,6 +30,13 @@ const store = createStore((state = initialState, action) => {
     default:
       return state;
   }
-});
+};
+
+const analyticsMiddleware = (store) => (next) => (action) => {
+  subject.next({ topic: "store", state: store.getState(), action });
+  next(action);
+};
+
+const store = createStore(reducer, applyMiddleware(analyticsMiddleware));
 
 export default store;
