@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Provider as ReduxProvider } from "react-redux";
+import store from "./store";
+import Overview from "./components/Overview";
+import SelectProduct from "./components/SelectProduct";
+import ConfirmPurchase from "./components/ConfirmPurchase";
+import PurchaseComplete from "./components/PurchaseComplete";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import "./App.css";
+
+const App = () => (
+  <ReduxProvider store={store}>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Overview} />
+        <Route path="/select-product" component={SelectProduct} />
+        <Route path="/confirm-purchase" component={ConfirmPurchase} />
+        <Route path="/purchase-complete" component={PurchaseComplete} />
+      </Switch>
+    </Router>
+  </ReduxProvider>
+);
 
 export default App;
